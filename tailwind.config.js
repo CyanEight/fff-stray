@@ -43,7 +43,7 @@ module.exports = {
         '465': '465px',
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
+        lexend: ['Lexend Deca', 'sans-serif'],
 
       },
       keyframes: {
