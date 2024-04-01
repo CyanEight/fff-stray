@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg viewBox="0.57 3.212 143.6753 30.6982" width="143.6753" height="30.6982" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
   <defs>
-    <style bx:fonts="Krona One">@import url(https://fonts.googleapis.com/css2?family=Krona+One%3Aital%2Cwght%400%2C400&amp;display=swap);</style>
+    <style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Krona+One%3Aital%2Cwght%400%2C400&amp;display=swap);</style>
   </defs>
   <text style="fill: rgb(255, 255, 255); font-family: 'Krona One'; font-size: 2.7px; white-space: pre;" transform="matrix(4.687464237213135, 0, 0, 4.687464237213135, -120.15970611572266, -146.2540740966797)"><tspan x="33.46" y="34.882">Cat Catering </tspan><tspan x="33.46" dy="1em">​</tspan><tspan>Community</tspan></text>
   <ellipse style="stroke: rgb(0, 0, 0); fill: rgb(255, 103, 0);" cx="15.452" cy="18.094" rx="14.882" ry="14.882"/>
