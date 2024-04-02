@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { FileWithPath, useDropzone } from "react-dropzone";
 
+import { detectCat } from "@/lib/detect-cat"; 
 import { Button } from "@/components/ui";
 import { convertFileToUrl } from "@/lib/utils";
 
