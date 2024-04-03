@@ -390,6 +390,44 @@ export async function savePost(userId: string, postId: string) {
     console.log(error);
   }
 }
+
+export async function followUser(userId: string, followerId: string, followerArray: string[], followingArray: string[]) {
+  try {
+    const updatedUser = await databases.updateDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.userCollectionId,
+      userId,
+      {
+        followers: followerArray,
+      }
+    );
+
+    if (!updatedUser) throw Error;
+
+    return !updatedUser;
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    const updatedFollower = await databases.updateDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.userCollectionId,
+      followerId,
+      {
+        following: followingArray,
+      }
+    );
+    
+
+    if (!updatedFollower) throw Error;
+
+    return updatedFollower;
+  } catch (error) {
+    console.log(error);
+  }
+
+}
 // ============================== DELETE SAVED POST
 export async function deleteSavedPost(savedRecordId: string) {
   try {
