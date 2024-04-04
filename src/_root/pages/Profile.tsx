@@ -13,6 +13,7 @@ import { LikedPosts } from "@/_root/pages";
 import { useUserContext } from "@/context/AuthContext";
 import { useGetUserById } from "@/lib/react-query/queries";
 import { GridPostList, Loader } from "@/components/shared";
+import { followUser } from "@/lib/appwrite/api";
 
 interface StabBlockProps {
   value: string | number;
@@ -24,7 +25,8 @@ const StatBlock = ({ value, label }: StabBlockProps) => (
     <p className="small-semibold lg:body-bold text-primary-500">{value}</p>
     <p className="small-medium lg:base-medium text-light-2">{label}</p>
   </div>
-);
+)
+
 
 const Profile = () => {
   const { id } = useParams();
