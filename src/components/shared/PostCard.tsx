@@ -26,6 +26,7 @@ const PostCard = ({ post }: PostCardProps) => {
               }
               alt="creator"
               className="w-12 lg:h-12 rounded-full"
+              title="View this creator's profile"
             />
           </Link>
 
@@ -53,12 +54,13 @@ const PostCard = ({ post }: PostCardProps) => {
             alt="edit"
             width={20}
             height={20}
+            title="Edit this post"
           />
         </Link>
       </div>
 
       <Link to={`/posts/${post.$id}`}>
-        <div className="small-medium lg:base-medium py-5">
+        <div className="small-medium lg:base-medium py-5" title="View this post">
           <p>{post.caption}</p>
           <ul className="flex gap-1 mt-2">
             {post.tags.map((tag: string, index: string) => (

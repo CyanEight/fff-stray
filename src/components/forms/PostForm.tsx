@@ -15,6 +15,7 @@ import {
   Input,
   Textarea,
 } from "@/components/ui";
+import { Checkbox } from "@/components/ui/checkbox"
 import { PostValidation } from "@/lib/validation";
 import { useToast } from "@/components/ui/use-toast";
 import { useUserContext } from "@/context/AuthContext";
@@ -37,6 +38,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
       file: [],
       location: post ? post.location : "",
       tags: post ? post.tags.join(",") : "",
+      adoptable: post ? post.adoptable : false,
     },
   });
 
@@ -94,6 +96,25 @@ const PostForm = ({ post, action }: PostFormProps) => {
                 <Textarea
                   className="shad-textarea custom-scrollbar"
                   {...field}
+                />
+              </FormControl>
+              <FormMessage className="shad-form_message" />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="adoptable"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="shad-form_label">
+                Is this post related to a cat that other users can adopt?
+              </FormLabel>
+              <FormControl>
+                <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
                 />
               </FormControl>
               <FormMessage className="shad-form_message" />

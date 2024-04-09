@@ -3,6 +3,7 @@ export const sidebarLinks = [
     imgURL: "/assets/icons/home.svg",
     route: "/",
     label: "Home",
+    title: "Go to homepage of Cat Catering Community"
   },
   {
     imgURL: "/assets/icons/wallpaper.svg",
@@ -17,17 +18,12 @@ export const sidebarLinks = [
   {
     imgURL: "/assets/icons/bookmark.svg",
     route: "/saved",
-    label: "Saved",
+    label: "Requests",
   },
   {
     imgURL: "/assets/icons/gallery-add.svg",
     route: "/create-post",
     label: "Create Post",
-  },
-  {
-    imgURL: "/assets/icons/donate.svg",
-    route: "/donate",
-    label: "Donate!",
   },
 ];
 
@@ -45,7 +41,7 @@ export const bottombarLinks = [
   {
     imgURL: "/assets/icons/bookmark.svg",
     route: "/saved",
-    label: "Saved",
+    label: "Requests",
   },
   {
     imgURL: "/assets/icons/gallery-add.svg",

@@ -147,6 +147,7 @@ export async function createPost(post: INewPost) {
         imageId: uploadedFile.$id,
         location: post.location,
         tags: tags,
+        adoptable: post.adoptable,
       }
     );
 

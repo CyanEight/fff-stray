@@ -18,6 +18,7 @@ type PostStatsProps = {
 const PostStats = ({ post, userId }: PostStatsProps) => {
   const location = useLocation();
   const likesList = post.likes.map((user: Models.Document) => user.$id);
+  const isAdoptable = post.adoptable
 
   const [likes, setLikes] = useState<string[]>(likesList);
   const [isSaved, setIsSaved] = useState(false);
@@ -84,6 +85,7 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
           alt="like"
           width={20}
           height={20}
+          title="Like this post"
           onClick={(e) => handleLikePost(e)}
           className="cursor-pointer"
         />
@@ -96,7 +98,9 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
           alt="share"
           width={20}
           height={20}
+          title="Request to adopt this cat"
           className="cursor-pointer"
+          hidden={!isAdoptable}
           onClick={(e) => handleSavePost(e)}
         />
       </div>

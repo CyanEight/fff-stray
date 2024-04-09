@@ -97,6 +97,7 @@ const PostDetails = () => {
                     alt="edit"
                     width={24}
                     height={24}
+                    title="Edit this post"
                   />
                 </Link>
 
@@ -111,6 +112,7 @@ const PostDetails = () => {
                     alt="delete"
                     width={24}
                     height={24}
+                    title="Delete this post"
                   />
                 </Button>
               </div>
