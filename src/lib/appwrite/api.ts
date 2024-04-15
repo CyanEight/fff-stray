@@ -392,38 +392,21 @@ export async function savePost(userId: string, postId: string) {
   }
 }
 
-export async function followUser(userId: string, followerId: string, followerArray: string[], followingArray: string[]) {
+export async function followUser(userId: string, followerId: string) {
   try {
-    const updatedUser = await databases.updateDocument(
+    const followUser = await databases.createDocument(
       appwriteConfig.databaseId,
-      appwriteConfig.userCollectionId,
-      userId,
+      appwriteConfig.followCollectionId,
+      ID.unique(),
       {
-        followers: followerArray,
+        follower: followerId,
+        following: userId,
       }
     );
 
-    if (!updatedUser) throw Error;
+    if (!followUser) throw Error;
 
-    return !updatedUser;
-  } catch (error) {
-    console.log(error);
-  }
-
-  try {
-    const updatedFollower = await databases.updateDocument(
-      appwriteConfig.databaseId,
-      appwriteConfig.userCollectionId,
-      followerId,
-      {
-        following: followingArray,
-      }
-    );
-    
-
-    if (!updatedFollower) throw Error;
-
-    return updatedFollower;
+    return !followUser;
   } catch (error) {
     console.log(error);
   }

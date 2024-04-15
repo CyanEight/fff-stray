@@ -6,9 +6,9 @@ import { useGetCurrentUser } from "@/lib/react-query/queries";
 const Saved = () => {
   const { data: currentUser } = useGetCurrentUser();
 
-  const savePosts = currentUser?.save
+  const savePosts = currentUser?.post
     .map((savePost: Models.Document) => ({
-      ...savePost.post,
+      ...savePost,
       creator: {
         imageUrl: currentUser.imageUrl,
       },
@@ -25,7 +25,7 @@ const Saved = () => {
           alt="edit"
           className="invert-white"
         />
-        <h2 className="h3-bold md:h2-bold text-left w-full">My Requests</h2>
+        <h2 className="h3-bold md:h2-bold text-left w-full">Sent Requests</h2>
       </div>
 
       {!currentUser ? (
