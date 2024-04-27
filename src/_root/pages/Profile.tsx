@@ -32,7 +32,7 @@ const Profile = () => {
   const { id } = useParams();
   const { user } = useUserContext();
   const { pathname } = useLocation();
-
+  
   const { data: currentUser } = useGetUserById(id || "");
 
   if (!currentUser)
@@ -41,6 +41,15 @@ const Profile = () => {
         <Loader />
       </div>
     );
+
+  const follow = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.stopPropagation();
+
+
+    followUser(currentUser.$id, user.id);
+  };
 
   return (
     <div className="profile-container">
@@ -66,7 +75,7 @@ const Profile = () => {
             <div className="flex gap-8 mt-10 items-center justify-center xl:justify-start flex-wrap z-20">
               <StatBlock value={currentUser.posts.length} label="Posts" />
               <StatBlock value={currentUser.followers.length} label="Followers" />
-              <StatBlock value={currentUser.followed.length} label="Following" />
+              <StatBlock value={currentUser.following.length} label="Following" />
             </div>
 
             <p className="small-medium md:base-medium text-center xl:text-left mt-7 max-w-screen-sm">
@@ -93,9 +102,9 @@ const Profile = () => {
               </Link>
             </div>
             <div className={`${user.id === id && "hidden"}`}>
-              <Button type="button" className="shad-button_primary px-8">
+              <button type="button" className="shad-button_primary px-8" onClick={(e) => follow(e)}>
                 Follow
-              </Button>
+              </button>
             </div>
           </div>
         </div>
